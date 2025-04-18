@@ -11,7 +11,7 @@ import { Slider } from "@/components/ui/slider"
 import { Calendar, ChevronDown, ChevronUp, RefreshCw } from "lucide-react"
 import { NameCard } from "@/components/name-card"
 import { PaymentModal } from "@/components/payment-modal"
-import { HistorySection } from "@/components/history-section"
+import { HistorySection, QueryProps } from "@/components/history-section"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Calendar as CalendarComponent } from "@/components/ui/calendar"
 import { format } from "date-fns"
@@ -75,7 +75,7 @@ export function NameGenerator() {
   const [showResults, setShowResults] = useState(false)
   const [generatedNames, setGeneratedNames] = useState<typeof mockNames>([])
   const [savedNames, setSavedNames] = useState<typeof mockNames>([])
-  const [history, setHistory] = useState<Array<{ query: any; results: typeof mockNames }>>([])
+  const [history, setHistory] = useState<Array<{ query: QueryProps; results: typeof mockNames }>>([])
   const [showPaymentModal, setShowPaymentModal] = useState(false)
   const [hasUsedService, setHasUsedService] = useState(false)
   const [similarityThreshold, setSimilarityThreshold] = useState([60])
@@ -355,7 +355,7 @@ export function NameGenerator() {
                 ))
               ) : (
                 <div className="text-center py-6">
-                  <p className="text-slate-500 text-sm">You haven't saved any names yet.</p>
+                  <p className="text-slate-500 text-sm">You havent saved any names yet.</p>
                 </div>
               )}
             </TabsContent>

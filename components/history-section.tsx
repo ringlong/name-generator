@@ -5,9 +5,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Clock, ChevronDown, ChevronUp } from "lucide-react"
 
+export interface QueryProps {
+  givenName?: string
+  familyName?: string
+  gender?: string
+  date?: string
+}
+
 interface HistorySectionProps {
   history: Array<{
-    query: any
+    query: QueryProps
     results: Array<{
       id: number
       name: string
